@@ -4,77 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Fire Tournament</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- PWA support -->
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.png">
-  <script>
-    // Register service worker for PWA
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
-    }
-  </script>
+  <meta name="theme-color" content="#ff6600">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #ff4500;
-      padding: 15px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    form {
-      margin: 20px auto;
-      padding: 20px;
-      background: #222;
-      border-radius: 8px;
-      max-width: 400px;
-    }
-    input, button {
-      width: 90%;
-      padding: 10px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 5px;
-    }
-    input {
-      background: #333;
-      color: #fff;
-    }
-    button {
-      background: #ff4500;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #e03e00;
-    }
+    body { font-family: Arial, sans-serif; text-align: center; }
+    .container { margin: 50px auto; max-width: 400px; }
+    form { display: flex; flex-direction: column; gap: 10px; }
+    input, button { padding: 10px; font-size: 16px; }
+    button { background: orange; border: none; cursor: pointer; }
   </style>
 </head>
 <body>
-  <header>🔥 Free Fire Tournament 🔥</header>
+  <div class="container">
+    <img src="icon.png" alt="Logo" width="100">
+    <h1>Free Fire Tournament</h1>
 
-  <h2>Register Now</h2>
-  <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
-    <input type="text" name="player_name" placeholder="Player Name" required>
-    <input type="text" name="uid" placeholder="Free Fire UID" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <button type="submit">Submit</button>
-  </form>
+    <form>
+      <input type="text" placeholder="Player UID" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <button type="submit">Register</button>
+    </form>
 
-  <h2>Pay Tournament Fee</h2>
-  <p>Click below to pay:</p>
-  <a href="https://yourpaymentlink.com">
-    <button>Pay Now</button>
-  </a>
-
-  <footer>
-    <p>© 2025 Free Fire Tournament</p>
-  </footer>
+    <p>Pay your entry fee:</p>
+    <button onclick="window.location.href='https://your-payment-link.com'">Pay Now</button>
+  </div>
 </body>
 </html>
